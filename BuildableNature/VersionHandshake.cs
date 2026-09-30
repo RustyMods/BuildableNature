@@ -81,8 +81,8 @@ namespace BuildableNature
 
         public static void RPC_BuildableNature_Version(ZRpc rpc, ZPackage pkg)
         {
-            string? version = pkg.ReadString();
-            string? hash = pkg.ReadString();
+            string version = pkg.ReadString();
+            string hash = pkg.ReadString();
 
             var hashForAssembly = ComputeHashForMod().Replace("-", "");
             BuildableNaturePlugin.BuildableNatureLogger.LogInfo("Version check, local: " +

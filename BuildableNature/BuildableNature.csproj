@@ -12,8 +12,8 @@
         <AssemblyName>BuildableNature</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
-        <LangVersion>10</LangVersion>
-        <Nullable>enable</Nullable>
+        <LangVersion>14</LangVersion>
+        <Nullable>disable</Nullable>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
@@ -79,6 +79,12 @@
         <Reference Include="ServerSync">
             <HintPath>Libs\ServerSync.dll</HintPath>
         </Reference>
+        <Reference Include="SoftReferenceableAssets">
+          <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Valheim\valheim_Data\Managed\publicized_assemblies\SoftReferenceableAssets_publicized.dll</HintPath>
+        </Reference>
+        <Reference Include="Splatform">
+          <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Valheim\valheim_Data\Managed\publicized_assemblies\Splatform_publicized.dll</HintPath>
+        </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
@@ -92,8 +98,14 @@
         <Reference Include="UnityEngine.CoreModule">
             <HintPath>$(CorlibPath)\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
+        <Reference Include="UnityEngine.ImageConversionModule">
+          <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+        </Reference>
         <Reference Include="UnityEngine.IMGUIModule">
             <HintPath>$(CorlibPath)\UnityEngine.IMGUIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ParticleSystemModule">
+          <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.PhysicsModule">
             <HintPath>$(CorlibPath)\UnityEngine.PhysicsModule.dll</HintPath>
@@ -112,15 +124,27 @@
         <Compile Include="Managers\PieceManager.cs" />
         <Compile Include="Plugin.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="Solution\ExclusionList.cs" />
-        <Compile Include="Solution\Flora.cs" />
+        <Compile Include="src\Assets\Ashlands.cs" />
+        <Compile Include="src\Assets\BlackForest.cs" />
+        <Compile Include="src\Assets\DeepNorth.cs" />
+        <Compile Include="src\Assets\Meadows.cs" />
+        <Compile Include="src\Assets\Misc.cs" />
+        <Compile Include="src\Assets\Mistlands.cs" />
+        <Compile Include="src\Assets\Mountains.cs" />
+        <Compile Include="src\Assets\Plains.cs" />
+        <Compile Include="src\Assets\Swamps.cs" />
+        <Compile Include="src\BeamToggle.cs" />
+        <Compile Include="src\Clone.cs" />
+        <Compile Include="src\EffectRef.cs" />
+        <Compile Include="src\Extensions.cs" />
+        <Compile Include="src\GemStand.cs" />
+        <Compile Include="src\IconExport.cs" />
+        <Compile Include="src\Patches.cs" />
+        <Compile Include="src\Portcullis.cs" />
+        <Compile Include="src\ReadMeBuilder.cs" />
         <Compile Include="VersionHandshake.cs" />
     </ItemGroup>
     <ItemGroup>
-        <None Include="App.config" />
-    </ItemGroup>
-    <ItemGroup>
-        <Content Include=".gitignore" />
         <Content Include="environment.props" />
         <Content Include="ILRepack.targets" />
         <Content Include="Libs\ServerSync.dll">
@@ -132,9 +156,6 @@
     <ItemGroup>
         <PackageReference Include="ILRepack.Lib.MSBuild.Task" Version="2.0.18.2" />
         <PackageReference Include="YamlDotNet" Version="13.1.0" />
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="assets" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
