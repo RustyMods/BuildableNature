@@ -5,11 +5,9 @@ using System.Reflection;
 using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
-using ClassSystem;
 using HarmonyLib;
 using PieceManager;
 using ServerSync;
-using SoftReferenceableAssets;
 using UnityEngine;
 
 namespace BuildableNature
@@ -32,6 +30,24 @@ namespace BuildableNature
         public static GameObject m_root = null!;
         public static BuildableNaturePlugin instance = null!;
         private static ConfigEntry<Toggle> _serverConfigLocked = null!;
+
+        // [HarmonyPatch(typeof(ZNetScene), nameof(ZNetScene.Awake))]
+        // private static class ExportSprites
+        // {
+        //     private static void Postfix()
+        //     {
+        //         if (!Directory.Exists(Path.Combine(Paths.ConfigPath, "BuildableNature")))
+        //         {
+        //             Directory.CreateDirectory(Path.Combine(Paths.ConfigPath, "BuildableNature"));
+        //         }
+        //         foreach (var clone in BuildPiece.clones)
+        //         {
+        //             if (clone.Prefab == null) continue;
+        //             if (!clone.Prefab.TryGetComponent(out Piece component)) continue;
+        //             IconExport.ExportSprite(component.m_icon, Path.Combine(Paths.ConfigPath, "BuildableNature"), clone.Prefab.name);
+        //         }
+        //     }
+        // }
 
         public void Awake()
         {
