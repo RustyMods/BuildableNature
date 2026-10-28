@@ -43,7 +43,7 @@ namespace BuildableNature
             m_root.SetActive(false);
 
             PiecePrefabManager.Init = true;
-            // ReadMeBuilder.Init();
+            // ReadMeBuilder.Init(false);
             
             
             // ashlands_archroof
