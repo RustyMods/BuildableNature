@@ -2,6 +2,7 @@
 - deep north update
 - piece manager update
 - server sync update
+- next update will see more prefabs ( taking time to get through each to make sure they working right )
 
 ## 1.0.8
 - removed effect area if pieces have them
