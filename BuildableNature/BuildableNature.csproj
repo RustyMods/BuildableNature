@@ -233,6 +233,7 @@
         <Content Include="Icons\piece_Crow_bn.png" />
         <Content Include="Icons\piece_crypt_skeleton_chest_bn.png" />
         <Content Include="Icons\piece_deepnorth_lantern_standing_bn.png" />
+        <Content Include="Icons\piece_dungeon_sunkencrypt_irongate_rusty_bn.png" />
         <Content Include="Icons\piece_dverger_demister_bn.png" />
         <Content Include="Icons\piece_dverger_demister_broken_bn.png" />
         <Content Include="Icons\piece_dverger_demister_large_bn.png" />
@@ -320,6 +321,8 @@
         <Content Include="Icons\piece_MineRock_Stone_bn.png" />
         <Content Include="Icons\piece_MineRock_Tin_bn.png" />
         <Content Include="Icons\piece_morgenhole_pile_bn.png" />
+        <Content Include="Icons\piece_Morkhalla_Banner1_bn.png" />
+        <Content Include="Icons\piece_Morkhalla_Banner2_bn.png" />
         <Content Include="Icons\piece_Morkhalla_Bedroll1_bn.png" />
         <Content Include="Icons\piece_Morkhalla_Bedroll2_bn.png" />
         <Content Include="Icons\piece_Morkhalla_Eye1_bn.png" />
@@ -356,6 +359,7 @@
         <Content Include="Icons\piece_morkhalla_web_horisontal_bn.png" />
         <Content Include="Icons\piece_morkhalla_web_tunnel_bn.png" />
         <Content Include="Icons\piece_Morkhalla_WoodBoards_bn.png" />
+        <Content Include="Icons\piece_MountainGraveStone01_bn.png" />
         <Content Include="Icons\piece_mudpile2_bn.png" />
         <Content Include="Icons\piece_mudpile_bn.png" />
         <Content Include="Icons\piece_Oak1_bn.png" />

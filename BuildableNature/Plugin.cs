@@ -4,6 +4,7 @@ using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
+using Managers;
 using PieceManager;
 using ServerSync;
 using UnityEngine;
@@ -20,7 +21,7 @@ namespace BuildableNature
         private static readonly string ConfigFileName = ModGUID + ".cfg";
         private static readonly string ConfigFileFullPath = Paths.ConfigPath + Path.DirectorySeparatorChar + ConfigFileName;
         internal static string ConnectionError = "";
-        private readonly Harmony _harmony = new(ModGUID);
+        public readonly Harmony _harmony = new(ModGUID);
         public static readonly ManualLogSource BuildableNatureLogger = BepInEx.Logging.Logger.CreateLogSource(ModName);
         private static readonly ConfigSync ConfigSync = new(ModGUID) { DisplayName = ModName, CurrentVersion = ModVersion, MinimumRequiredVersion = ModVersion };
         public enum Toggle { On = 1, Off = 0 }
@@ -42,6 +43,9 @@ namespace BuildableNature
             m_root.SetActive(false);
 
             PiecePrefabManager.Init = true;
+            // ReadMeBuilder.Init();
+            
+            
             // ashlands_archroof
             // ashlands_floor_large
             // ashlands_fortress_wall_pillar

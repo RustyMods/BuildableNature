@@ -1,2 +1,317 @@
-# Ready to use english translation file for the plugin
-# (for more information on LocalizationManager, see the LocalizationManager documentation https://github.com/blaxxun-boop/LocalizationManager#example-project).
+piece_ancient_skull: Ancient Skull
+piece_ashcrow: Ashcrow
+piece_ashlands_altar: Ashlands Altar
+piece_ashlands_boss_pillar: Fader Pillar
+piece_ashlands_boss_pillar: Fader Pillar
+piece_ashlands_boss_pillar: Fader Pillar
+piece_ashlands_boss_pillar: Fader Pillar
+piece_ashlands_rock1: Ashlands Rock
+piece_ashlands_rock2: Ashlands Rock
+piece_ashlands_branch1: Ashlands Log
+piece_ashlands_branch2: Ashlands Branch
+piece_ashlands_branch3: Ashlands Log
+piece_ashlands_stub: Ashlands Stub
+piece_ashlands_tree: Ashlands Tree
+piece_ashlands_tree: Ashlands Tree
+piece_ashlands_tree: Ashlands Tree
+piece_ashlands_tree: Ashlands Tree
+piece_ashlands_tree: Ashlands Tree
+piece_ashlands_tree_big: Ashlands Large Tree
+piece_ashlands_stump: Ashlands Stump
+piece_ashlands_stump: Ashlands Stump
+piece_ashlands_stump: Ashlands Stump
+piece_asksvin_carrion: Asksvin Carrion
+piece_asksvin_carrion: Asksvin Carrion
+piece_barrel: Barrel
+piece_beech_small: Small Beech
+piece_beech_small: Small Beech
+piece_beech_stub: Beech Stub
+piece_beech1: Beech Tree
+piece_big_branch: Big Branch
+piece_big_rock: Big Rock
+piece_birch_sapling: Birch Sapling
+piece_birch1: Birch Tree
+piece_birch_aut: Autumn Birch Tree
+piece_birch2: Birch Tree
+piece_birch_aut: Autumn Birch Tree
+piece_birch_stub: Birch Stub
+piece_black_ice_core: Black Ice Core
+piece_black_ice_core_outer: Black Ice Core
+piece_black_ice_core_outer: Black Ice Core
+piece_black_ice_shard: Black Ice Shard
+piece_black_ice_shard: Black Ice Shard
+piece_blackmarble_altar: Black Marble Altar
+piece_black_marble_post: Black Marble Altar
+piece_blob_mork: Blob Cube
+piece_blueberry_bush: Blueberry Bush
+piece_bonepile: Bone Pile
+piece_bucket: Bucket
+piece_bush: Bush
+piece_bush_deepnorth: Frozen Bush
+piece_bush_heath: Plains Bush
+piece_bush_02_heath: Plains Bush
+piece_caverock_ice_pillar_wall: Ice Wall
+piece_caverock_stalagmite: Stalagmite
+piece_caverock_stalagtite: Stalagtite
+piece_charred_altar_bell_fragment: Charred Altar Fragment
+piece_charred_banner: Charred Banner
+piece_charred_banner: Charred Banner
+piece_charred_banner: Charred Banner
+piece_chest_old: Chest
+piece_chest_hildir: Hildir Chest 1
+piece_chest_hildir2: Hildir Chest 2
+piece_chest_hildir3: Hildir Chest 3
+piece_ashlands_cliff1: Ashlands Cliff
+piece_ashlands_cliff2: Ashlands Boulder
+piece_ashlands_cliff3_arch: Ashlands Arch
+piece_ashlands_cliff4: Ashlands Spire
+piece_ashlands_cliff5: Ashlands Boulder
+piece_ashlands_cliff6: Ashlands Boulder
+piece_ashlands_cliff7_arch: Ashlands Half Arch
+piece_ashlands_cliff8: Ashlands Boulder
+piece_cliff_mistlands1: Mistlands Cliff
+piece_cliff_mistlands1_creep: Mistlands Creep Cliff
+piece_cliff_mistlands2: Mistlands Cliff
+piece_cloth_hanging_door: Hanging Red Jute
+piece_cloudberry_bush: Cloudberry Bush
+piece_hanging_egg: Hanging Eggs
+piece_creep_slime: Slime
+piece_creep_slime: Slime
+piece_hanging_slime: Hanging Slime
+piece_creep_slime: Slime
+piece_crow: Crow
+piece_skeleton_chest: Stone Chest
+piece_deep_north_lantern_standing: Standing Lantern
+piece_iron_grate_rusty: Rusty Iron Gate
+piece_dverger_demister: Demister
+piece_dverger_demister_broken: Broken Demister
+piece_dverger_demister_large: Large Demister
+piece_barrel_fermenter: Fermenting Barrel
+piece_dverger_pickaxe: Dverger Pickaxe
+piece_dverger_beam: Yggdrasil Beam
+piece_dverger_pole: Yggdrasil Pole
+piece_dverger_support: Yggdrasil Support
+piece_dverger_wall1: Yggdrasil Wall
+piece_dverger_wall2: Yggdrasil Wall
+piece_dverger_wall3: Yggdrasil Wall Door
+piece_elaking_trashpile: Elaking Trash Pile
+piece_evil_heart: Evil Heart
+piece_hanging_fenrir_hide: Hanging Wolf Hair
+piece_fern_ashlands: Ashlands Fern
+piece_fern_fiddlehead_ashlands: Fiddlehead
+piece_fimbul_winter_orb: Winter Orb
+piece_firtree: Fir Tree
+piece_firtree_big: Winter Fir Tree
+piece_firtree_big_stub: Winter Fir Tree Stub
+piece_firtree_big_sapling: Winter Fir Tree Sapling
+piece_firtree_oldlog: Fir Log
+piece_firtree_sapling: Fir Tree Sapling
+piece_firtree_small: Small Fir Tree
+piece_firtree_small: Small Fir Tree
+piece_firtree_snow_stub: Big Fir Tree Stub
+piece_firtree_stub: Fir Tree Stub
+piece_flametal_rockstand: Ashlands Rock Stand
+piece_flying_core: Red Crystal
+piece_frozen_greydwarf: Frozen Greydwarf
+piece_frozen_ship: Frozen Ship
+piece_frozen_ship: Frozen Ship
+piece_frozen_ship: Frozen Ship
+piece_frozen_skeleton: Frozen Skeleton
+piece_frozen_skeleton: Frozen Skeleton
+piece_giant_arm: Giant Arm
+piece_giant_brain_bn: Giant Brain
+piece_giant_helmet: Giant Helmet
+piece_giant_helmet: Giant Helmet
+piece_giant_ribs: Giant Ribs
+piece_giant_skull: Giant Skull
+piece_giant_sword: Giant Sword
+piece_giant_sword: Giant Sword
+piece_goblin_totem_pole: Totem Pole
+piece_goblin_trashpile: Fuling Trash Pile
+piece_gold_vein: Gold Vein
+piece_greydwarf_root: Greydwarf Nest Root
+piece_guck_sack: Guck Sack
+piece_guck_sack_small: Small Guck Sack
+piece_wolf_hair_stands: Wolf Hair Stands
+piece_heath_rock_pillar: Plains Rock Pillar
+piece_high_stone: High Stone
+piece_high_stone: High Stone
+piece_hole_rock_floor: Root Floor
+piece_hole_rock_wall: Root Wall
+piece_huge_swamp_root: Huge Root
+piece_iceberg: Iceberg
+piece_ice_platform: Ice Platform
+piece_ice_pond: Ice Pond
+piece_ice_shard: Ice Shard
+piece_ice_shard: Ice Shard
+piece_ice_shard: Ice Shard
+piece_ice_shard: Ice Shard
+piece_ice_shard: Ice Shard
+piece_ice_shard: Ice Shard
+piece_ice_platform_large: Ice Shore
+piece_ice_platform: Ice Platform
+piece_lavabomb_rock: Lava Bomb Platform
+piece_lavarock_ashlands: Ashlands Rock Spire
+piece_leviathan: Leviathan
+piece_leviathan_lava: Flametal Rock Spire
+piece_lingonberry_bush: Lingonberry Bush
+piece_lured_fader_ember: Fader Ember
+piece_lured_wisp: Wisp
+piece_stone_marker: Stone Marker
+piece_stone_marker: Stone Marker
+piece_memorial: Stone Memorial
+piece_memorial: Stone Memorial
+piece_memorial: Stone Memorial
+piece_copper_ore_pile: Copper Ore Pile
+piece_iron_ore_pile: Iron Ore Pile
+piece_meteorite_spire: Flametal Spire
+piece_obsidian_deposit: Obsidian Deposit
+piece_minerock_stone_pile: Stone Pile
+piece_tin_deposit: Tin Deposit
+piece_morgen_hole_pile: Morgen Hole Pile
+piece_morkhalla_banner_1: Morkhalla Banner
+piece_morkhalla_banner_1: Morkhalla Banner
+piece_morkhalla_bedroll: Morkhalla Bedroll
+piece_morkhalla_bedroll: Morkhalla Bedroll
+piece_black_gem_socket: Morkhalla Draumyx
+piece_green_gem_socket: Morkhalla Grimvarn
+piece_orange_gem_socket: Morkhalla Solryth
+piece_purple_gem_socket: Morkhalla Veydris
+piece_blue_gem_socket: Morkhalla Iolite
+piece_green_gem_gem_socket: Morkhalla Jade
+piece_red_gem_gem_socket: Morkhalla Bloodstone
+piece_morkhalla_eye_interactable: Gem Socket
+piece_morkhalla_firepit: Morkhalla Fire Pit
+piece_morkhalla_gate_wall: Morkhalla Portcullis
+piece_morkhalla_barricade: Morkhalla Barricade
+piece_morkhalla_gate_wall: Morkhalla Portcullis
+piece_morkhalla_rubble_trashpile: Morkhalla Trash Pile
+piece_morkhalla_rubble: Morkhalla Rubble
+piece_morkhalla_rubble: Morkhalla Rubble
+piece_morkhalla_rubble: Morkhalla Rubble
+piece_morkhalla_rubble: Morkhalla Rubble
+piece_morkhalla_rug_corner: Morkhalla Rug Corner
+piece_morkhalla_rug_end: Morkhalla Rug End
+piece_morkhalla_rug_end: Morkhalla Rug End
+piece_morkhalla_rug_middle: Morkhalla Rug Middle
+piece_morkhalla_statue_arm_l: Morkhalla Statue Arm L
+piece_morkhalla_statue_arm_l: Morkhalla Statue Arm L
+piece_morkhalla_statue_arm_l: Morkhalla Statue Arm L
+piece_morkhalla_statue_arm_l: Morkhalla Statue Arm L
+piece_morkhalla_statue_arm_l: Morkhalla Statue Arm L
+piece_morkhalla_statue_arm_l: Morkhalla Statue Arm L
+piece_morkhalla_statue_arm_l: Morkhalla Statue Arm L
+piece_morkhalla_statue_arm_l: Morkhalla Statue Arm L
+piece_morkhalla_statue_arm_l: Morkhalla Statue Arm L
+piece_morkhalla_weapon_stand: Morkhalla Weapon Stand
+piece_morkhalla_web: Morkhalla Web
+piece_morkhalla_web: Morkhalla Web
+piece_morkhalla_web: Morkhalla Web
+piece_morkhalla_floorboards: Morkhalla Floor
+piece_mountain_gravestone: Mountain Gravestone
+piece_mudpile: Mud Pile
+piece_mudpile: Mud Pile
+piece_oak_sapling: Oak Sapling
+piece_oak: Oak Tree
+piece_oak_stub: Oak Stub
+piece_ashstone: Ash Stone
+piece_black_core_stand: Black Core Stand
+piece_bog_iron: Bog Iron
+piece_charred_skull: Charred Skull
+piece_dandelion: Dandelion
+piece_flint: Flint
+piece_crypt_remains: Skeleton Remains
+piece_crypt_remains: Skeleton Remains
+piece_crypt_remains: Skeleton Remains
+piece_crypt_remains: Skeleton Remains
+piece_frost_core: Frost Core
+piece_meat_pile: Meat Pile
+piece_meteorite: Meteorite
+piece_molten_core_stand: Molten Core Stand
+piece_cave_crystal: Crystal
+piece_cave_obsidian: Obsidian
+piece_smoke_puff: Smoke Puff
+piece_surtling_core_stand: Molten Core Stand
+piece_tar: Tar
+piece_thistle: Thistle
+piece_tin: Tin
+piece_volture_egg: Volture Egg
+piece_pine_tree_old: Old Pine Tree
+piece_pine_tree: Pine Tree
+piece_pinetree_stub: Pine Tree Stub
+piece_pinetree_sapling: Pine Tree Sapling
+piece_raspberry_bush: Raspberry Bush
+piece_rock_3: Rock
+piece_rock_3: Rock
+piece_rock_3: Rock
+piece_rock_mistlands: Mistlands Rock
+piece_rock_mistlands: Mistlands Rock
+piece_large_rock: Large Rock
+piece_large_rock: Large Rock
+piece_large_rock: Large Rock
+piece_large_rock: Large Rock
+piece_rock_silver: Silver Rock
+piece_large_rock: Large Rock
+piece_copper_rock: Copper Vein
+piece_large_rock: Large Rock
+piece_dolmen: Dolmen Rock
+piece_dolmen: Dolmen Rock
+piece_dolmen: Dolmen Rock
+piece_rock_finger: Finger Rock
+piece_rock_finger_broken: Broken Finger Rock
+piece_rock_thumb: Thumb Rock
+piece_swamp_root: Root
+piece_swamp_root: Root
+piece_swamp_root: Root
+piece_swamp_root: Root
+piece_sapling_barley_bn: Barley Sapling
+piece_sapling_carrot_bn: Carrot Sapling
+piece_sapling_flax_bn: Flax Sapling
+piece_sapling_jotunn_puff_bn: Jotunn Puff Sapling
+piece_sapling_kale_bn: Kale Sapling
+piece_sapling_magecap_bn: Magecap Sapling
+piece_sapling_oat_bn: Oat Sapling
+piece_sapling_onion_bn: Onion Sapling
+piece_sapling_poteitr_bn: Poteir Sapling
+piece_sapling_carrotseeds_bn: Carrot Seeds Sapling
+piece_sapling_kaleseeds_bn: Kale Seeds Sapling
+piece_sapling_onionseeds_bn: Onion Seeds Sapling
+piece_sapling_turnipseeds_bn: Turnip Seeds Sapling
+piece_sapling_turnip_bn: Turnip Sapling
+piece_ashcrow: Ashcrow
+piece_seeker_egg: Seeker Egg
+piece_shimmering_sand: Shimmering Sand Rock
+piece_shoot_stub: Shoot Stub
+piece_shrub_2: Shrub
+piece_shrub_2: Shrub
+piece_silver_vein: Silver Vein
+piece_firtree_snow: Snow Fir Tree
+piece_firtree_snow: Snow Fir Tree
+piece_snowball: Snowball
+piece_charred_cross: Charred Cross
+piece_charred_stone: Charred Stone
+piece_charred_stone: Charred Stone
+piece_draugr_pile: Draugr Pile
+piece_elaking_hole: Elaking Hole
+piece_stone_wall: Stone Wall
+piece_stone_wall: Stone Wall
+piece_stub: Stub
+piece_stump_hole: Stump Hole
+piece_stump_hut: Stump Hut
+piece_stump_log: Stump Log
+piece_swamp_tree: Swamp Tree
+piece_swamp_tree_stub: Swamp Stub
+piece_tar_lump: Tar Lump
+piece_trader_wagon_bn: Wagon
+piece_troll_frost_dead: Gammetroll
+piece_ash_vine: Ash Vine
+piece_sapling_vine_ash: Vineberry Sapling
+piece_vine: Vine
+piece_sapling_vine: Vine Sapling
+piece_volture_straw_pile: Volture Nest
+piece_wide_stone: Wide Stone
+piece_wide_stone: Wide Stone
+piece_ygga_shoot_small: Small Yggrasil Tree
+piece_ygga_shoot_tree: Yggdrasil Tree
+piece_ygga_shoot_tree: Yggdrasil Tree
+piece_ygga_shoot_tree: Yggdrasil Tree
