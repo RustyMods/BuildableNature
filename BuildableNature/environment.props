@@ -4,7 +4,8 @@
         <BepInExPath>C:\Users\malco\AppData\Roaming\com.kesomannen.gale\valheim\profiles\Default\BepInEx</BepInExPath>
         <CorlibPath>$(ValheimGamePath)\valheim_Data\Managed</CorlibPath>
         <PublicizedAssembliesPath>$(ValheimGamePath)\valheim_Data\Managed\publicized_assemblies</PublicizedAssembliesPath>
-        <CopyOutputDLLPath>C:\Users\malco\AppData\Roaming\com.kesomannen.gale\valheim\profiles\test 1.0\BepInEx\plugins\RustyMods-BuildableNature</CopyOutputDLLPath> 
+        <CopyOutputDLLPath>C:\Users\malco\RiderProjects\BuildableNature\BuildableNature\Thunderstore</CopyOutputDLLPath>
+<!--        <CopyOutputDLLPath2>C:\Users\malco\AppData\Roaming\com.kesomannen.gale\valheim\profiles\test 1.0\BepInEx\plugins\RustyMods-BuildableNature</CopyOutputDLLPath2>-->
         <AfterTargets>ILRepacker</AfterTargets>
     </PropertyGroup>
 </Project>

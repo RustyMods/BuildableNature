@@ -1,0 +1,9 @@
+{
+	"name": "BuildableNature",
+	"version_number": "1.0.9",
+	"website_url": "https://github.com/RustyMods/BuildableNature",
+	"description": "Converts vanilla pickables, destructibles, minerocks into buildable pieces",
+	"dependencies": [
+		"denikson-BepInExPack_Valheim-5.4.2105"
+	]
+}

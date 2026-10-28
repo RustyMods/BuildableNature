@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Reflection;
 using BepInEx;
 using BepInEx.Configuration;
@@ -16,7 +14,7 @@ namespace BuildableNature
     public class BuildableNaturePlugin : BaseUnityPlugin
     {
         internal const string ModName = "BuildableNature";
-        internal const string ModVersion = "1.0.5";
+        internal const string ModVersion = "1.0.9";
         internal const string Author = "RustyMods";
         private const string ModGUID = Author + "." + ModName;
         private static readonly string ConfigFileName = ModGUID + ".cfg";
@@ -31,23 +29,7 @@ namespace BuildableNature
         public static BuildableNaturePlugin instance = null!;
         private static ConfigEntry<Toggle> _serverConfigLocked = null!;
 
-        // [HarmonyPatch(typeof(ZNetScene), nameof(ZNetScene.Awake))]
-        // private static class ExportSprites
-        // {
-        //     private static void Postfix()
-        //     {
-        //         if (!Directory.Exists(Path.Combine(Paths.ConfigPath, "BuildableNature")))
-        //         {
-        //             Directory.CreateDirectory(Path.Combine(Paths.ConfigPath, "BuildableNature"));
-        //         }
-        //         foreach (var clone in BuildPiece.clones)
-        //         {
-        //             if (clone.Prefab == null) continue;
-        //             if (!clone.Prefab.TryGetComponent(out Piece component)) continue;
-        //             IconExport.ExportSprite(component.m_icon, Path.Combine(Paths.ConfigPath, "BuildableNature"), clone.Prefab.name);
-        //         }
-        //     }
-        // }
+
 
         public void Awake()
         {
@@ -79,103 +61,87 @@ namespace BuildableNature
             Assets.Mistlands();
             Assets.Swamps();
             Assets.Mountains();
-   
+            
+            // var piece_cargo_crate = new Clone("CargoCrate");
+            // piece_cargo_crate.OnCreated += prefab =>
+            // {
+            //     // Keeps being placed 70 meters above placement????
+            //     prefab.Remove<Rigidbody>();
+            //     prefab.Remove<ZSyncTransform>();
+            //     prefab.Remove<Floating>();
+            //     prefab.Remove<Destructible>();
+            //     var model = prefab.transform.Find("default (4)").gameObject;
+            //     prefab.SetLayerRecursively(10);
+            //     var piece = prefab.AddComponent<Piece>();
+            //     piece.m_name = "$piece_cargo_crate";
+            //     piece.m_category = Piece.PieceCategory.Misc;
+            //     piece.m_usage = Piece.UsageTagFlags.Storage;
+            //     piece.m_placeEffect = new EffectListRef("vfx_Place_workbench", "sfx_build_hammer_wood");
+            //     var wnt = prefab.AddComponent<WearNTear>();
+            //     wnt.m_hitEffect = new EffectListRef("vfx_SawDust");
+            //     wnt.m_destroyedEffect = new EffectListRef("vfx_SawDust", "sfx_wood_destroyed");
+            //     wnt.m_new = model;
+            //     wnt.m_worn = model;
+            //     wnt.m_wet = model;
+            //     wnt.m_broken = model;
+            //     wnt.m_materialType = WearNTear.MaterialType.Wood;
+            //     wnt.m_health = 80f;
+            //     wnt.m_supports = false;
+            //     BuildPiece build = new BuildPiece(prefab);
+            //     build.Category.Set("Nature");
+            //     build.Usage.Set(Piece.UsageTagFlags.Storage);
+            //     build.Name.English("Cargo Crate");
+            //     build.RequiredItems.Add("Wood", 10, true);
+            //     build.RequiredItems.Add("BronzeNails", 1, true);
+            //     build.Snapshot();
+            // };
+            
+            // dungeon_sunkencrypt_irongate_rusty
+            
+            var piece_morkhalla_banner_1 = new Clone("Morkhalla_Banner1");
+            piece_morkhalla_banner_1.OnCreated += prefab =>
+            {
+                // banner drifts from post ??
+                prefab.Remove<DropOnDestroyed>();
+                
+                prefab.SetLayerRecursively(10);
+                var piece = prefab.AddComponent<Piece>();
+                piece.m_name = "$piece_morkhalla_banner_1";
+                piece.m_category = Piece.PieceCategory.Misc;
+                piece.m_usage = Piece.UsageTagFlags.Decor;
+                piece.m_placeEffect = new EffectListRef("vfx_Place_workbench", "sfx_build_hammer_wood");
 
+                BuildPiece build = new BuildPiece(prefab);
+                build.Category.Set("Nature");
+                build.Usage.Set(Piece.UsageTagFlags.Decor);
+                build.Name.English("Morkhalla Banner");
+                build.RequiredItems.Add("FineWood", 10, true);
+                build.RequiredItems.Add("BronzeNails", 5, true);
+                build.Snapshot();
+            };
+            
+            var piece_morkhalla_banner_2 = new Clone("Morkhalla_Banner2");
+            piece_morkhalla_banner_2.OnCreated += prefab =>
+            {
+                prefab.Remove<DropOnDestroyed>();
+                
+                prefab.SetLayerRecursively(10);
+                var piece = prefab.AddComponent<Piece>();
+                piece.m_name = "$piece_morkhalla_banner_1";
+                piece.m_category = Piece.PieceCategory.Misc;
+                piece.m_usage = Piece.UsageTagFlags.Decor;
+                piece.m_placeEffect = new EffectListRef("vfx_Place_workbench", "sfx_build_hammer_wood");
 
-// Acorn
-// Amber
-// AmberPearl
-// ancientbarkspear_projectile
-// AncientCoin
-// AncientGemstoneBlack
-// AncientGemstoneGreen
-// AncientGemstoneOrange
-// AncientGemstonePurple
-// AncientSeed
-// ArmorAshlandsMediumChest
-// ArmorAshlandsMediumlegs
-// ArmorBerserkerChest
-// ArmorBerserkerLegs
-// ArmorBerserkerUndeadChest
-// ArmorBerserkerUndeadLegs
-// ArmorBronzeChest
-// ArmorBronzeLegs
-// ArmorCarapaceChest
-// ArmorCarapaceLegs
-// ArmorDeepNorthHeavyChest
-// ArmorDeepNorthHeavylegs
-// ArmorDeepNorthMageChest
-// ArmorDeepNorthMagelegs
-// ArmorDeepNorthMediumChest
-// ArmorDeepNorthMediumlegs
-// ArmorDress1
-// ArmorDress10
-// ArmorDress2
-// ArmorDress3
-// ArmorDress4
-// ArmorDress5
-// ArmorDress6
-// ArmorDress7
-// ArmorDress8
-// ArmorDress9
-// ArmorFenringChest
-// ArmorFenringLegs
-// ArmorFlametalChest
-// ArmorFlametalLegs
-// ArmorGoldHeavyChestUncooked
-// ArmorGoldHeavyHelmetUncooked
-// ArmorGoldHeavyLegsUncooked
-// ArmorGoldMageChestUncooked
-// ArmorGoldMageHelmetUncooked
-// ArmorGoldMageLegsUncooked
-// ArmorGoldMediumChestUncooked
-// ArmorGoldMediumHelmetUncooked
-// ArmorGoldMediumLegsUncooked
-// ArmorHarvester1
-// ArmorHarvester2
-// ArmorIronChest
-// ArmorIronLegs
-// ArmorLeatherChest
-// ArmorLeatherLegs
-// ArmorLoxChest
-// ArmorLoxLegs
-// ArmorMageChest
-// ArmorMageChest_Ashlands
-// ArmorMageLegs
-// ArmorMageLegs_Ashlands
-// ArmorPaddedCuirass
-// ArmorPaddedGreaves
-// ArmorRagsChest
-// ArmorRagsLegs
-// ArmorRootChest
-// ArmorRootLegs
-// ArmorTrollLeatherChest
-// ArmorTrollLeatherLegs
-// ArmorTunic1
-// ArmorTunic10
-// ArmorTunic2
-// ArmorTunic3
-// ArmorTunic4
-// ArmorTunic5
-// ArmorTunic6
-// ArmorTunic7
-// ArmorTunic8
-// ArmorTunic9
-// ArmorWolfChest
-// ArmorWolfLegs
-// ArrowBloodGold
-// ArrowBronze
-// ArrowCarapace
-// ArrowCharred
-// ArrowFire
-// ArrowFlint
-// ArrowFrost
-// ArrowIron
-// ArrowNeedle
-// ArrowObsidian
-// ArrowPoison
-// ArrowSilver
-// ArrowWood
+                BuildPiece build = new BuildPiece(prefab);
+                build.Category.Set("Nature");
+                build.Usage.Set(Piece.UsageTagFlags.Decor);
+                build.Name.English("Morkhalla Banner");
+                build.RequiredItems.Add("FineWood", 10, true);
+                build.RequiredItems.Add("BronzeNails", 5, true);
+                build.Snapshot();
+            };
+
+            
 // ashland_pot1_green
 // ashland_pot1_red
 // ashland_pot2_green
@@ -263,118 +229,12 @@ namespace BuildableNature
 // AshlandsTreeLog2
 // AshlandsTreeLogHalf1
 // AshlandsTreeLogHalf2
-// AskBladder
-// AskHide
 
-// AsksvinEgg
-// AsksvinMeat
-// Aspect_Bonemass
-// Aspect_Eikthyr
-// Aspect_Elder
-// AtgeirBlackmetal
-// AtgeirBronze
-// AtgeirGold
-// AtgeirGold_BloodLightning
-// AtgeirGold_FrostFire
-// AtgeirGoldUncooked
-// AtgeirHimminAfl
-// AtgeirIron
-// AtgeirWood
-// Axe1h_JotunWarrior
-// Axe1h_JotunWarrior 1
-// Axe2h_JotunWarrior
-// AxeBerzerkr
-// AxeBerzerkrBlood
-// AxeBerzerkrLightning
-// AxeBerzerkrNature
-// AxeBlackMetal
-// AxeBronze
-// AxeEarly
-// AxeFlint
-// AxeGold
-// AxeGold_BloodLightning
-// AxeGold_FrostFire
-// AxeGoldUncooked
-// AxeHead1
-// AxeHead2
-// AxeIron
-// AxeJotunBane
-// AxeStone
-// AxeWood
-// BakedPoteitrUncooked
-// BarberKit
-// BarkaBranch
-// Barley
-// BarleyFlour
-// BarleyWineBase
-// BarrelRings
-// Battleaxe
-// BattleaxeBlackmetal
-// BattleaxeCrystal
-// BattleaxeGold
-// BattleaxeGold_BloodLightning
-// BattleaxeGold_FrostFire
-// BattleaxeGoldUncooked
-// BattleaxeSkullSplittur
-// BattleaxeWood
 // beech_log
 // beech_log_half
-// BeechSeeds
-// Beehive
-// Bell
-// BellFragment
-// BeltStrength
-// Bilebag
-// bilebomb_projectile
-// Birch_log
-// Birch_log_half
-// BirchSeeds
-// BjornHide
-// BjornMeat
-// BjornPaw
-// BlackCore
-// BlackMarble
+
 // blackmarble_altar_crystal_broken
-// BlackMetal
-// BlackMetalScrap
-// Blackwood
-// blobtar_projectile_tarball
-// BlobVial
-// Bloodbag
-// BloodGoldKey
-// BoltBlackmetal
-// BoltBloodGold
-// BoltBone
-// BoltCarapace
-// BoltCharred
-// BoltIron
-// BombBile
-// BombBlob_Frost
-// BombBlob_Frost_projectile
-// BombBlob_Lava
-// BombBlob_Lava_projectile
-// BombBlob_Morkhalla
-// BombBlob_Morkhalla_projectile
-// BombBlob_Poison
-// BombBlob_Poison_projectile
-// BombBlob_PoisonElite
-// BombBlob_PoisonElite_projectile
-// BombBlob_Tar
-// BombBlob_Tar_projectile
-// BombDynamite
-// bombdynamite_projectile
-// BombLava
-// BombOoze
-// BombSiege
-// BombSmoke
-// BoneFragments
-// Bonemass
-// bonemass_throw_projectile
-// BonemawSerpent_projectile
-// BoneMawSerpentMeat
-// BonemawSerpentScale
-// BonemawSerpentTooth
-// BonePileSpawner_swamp
+
 // BossStone_Bonemass
 // BossStone_DragonQueen
 // BossStone_Eikthyr
@@ -382,54 +242,8 @@ namespace BuildableNature
 // BossStone_TheElder
 // BossStone_TheQueen
 // BossStone_Yagluth
-// Bow
-// bow_projectile
-// bow_projectile_bloodgold
-// bow_projectile_bronze
-// bow_projectile_carapace
-// bow_projectile_charred
-// bow_projectile_fire
-// bow_projectile_flint
-// bow_projectile_frost
-// bow_projectile_iron
-// bow_projectile_needle
-// bow_projectile_obsidian
-// bow_projectile_poison
-// bow_projectile_silver
-// BowAshlands
-// BowAshlandsBlood
-// BowAshlandsRoot
-// BowAshlandsStorm
-// BowDraugrFang
-// BowFineWood
-// BowGold
-// BowGold_BloodLightning
-// BowGold_FrostFire
-// BowGoldUncooked
-// BowHuntsman
-// BowSpineSnap
-// BreadDough
-// Bronze
-// BronzeNails
-// BronzeScrap
-// bronzespear_projectile
-// BugMeat
-// CandleWick
-// CapeAsh
-// CapeAsksvin
-// CapeDeepNorth
-// CapeDeepNorthMage
-// CapeDeerHide
-// CapeFeather
-// CapeLinen
-// CapeLox
-// CapeOdin
-// CapeTest
-// CapeTrollHide
-// CapeWolf
-// Carapace
-// CargoCrate
-// CarrotSeeds
+
+
 // CastleKit_braided_box01
 // CastleKit_brazier
 // CastleKit_groundtorch
@@ -438,95 +252,24 @@ namespace BuildableNature
 // CastleKit_groundtorch_unlit
 // CastleKit_metal_groundtorch_unlit
 // CastleKit_pot03
-// Catapult_ammo
-// Catapult_Ammo_BloodGold
-// Catapult_Ammo_BloodGold_Projectile
-// Catapult_Ammo_Projectile
-// Catapult_projectile
+
 // caverock_ice_stalagmite_broken
 // caverock_ice_stalagmite_destruction
 // caverock_ice_stalagtite_destruction
 // caverock_ice_stalagtite_falling
 // caverock_ice_wall_destruction
-// CelestialFeather
-// CeramicPlate
-// Chain
-// CharcoalResin
 
-// CharredBone
-// CharredCogwheel
 // Charredfortress_LOD
-// Charredskull
-
-// ChickenEgg
-// ChickenMeat
-// Chitin
-// Cinder
-// Cinder_campfire
-// CinderSky
-// CinderStorm
 
 // cloth_hanging_door
 // cloth_hanging_door_double
-// Club
-// Coal
-// Coins
-// Copper
-// CopperOre
-// CopperScrap
 // CreepProp_egg_hanging02
 
-// CrossbowArbalest
-// CrossbowGold
-// CrossbowGold_BloodLightning
-// CrossbowGold_FrostFire
-// CrossbowGoldUncooked
-// CrossbowRipper
-// CrossbowRipperBlood
-// CrossbowRipperLightning
-// CrossbowRipperNature
-// CrownJewel
-// CryptKey
-// Crystal
-// Cultivator
-// CuredSquirrelHamstring
-// Dandelion
-// dead_deer
-// DeerHide
-// DeerMeat
-// Demister
-// demister_ball
-// dragon_ice_projectile
-// DragonEgg
 // dragoneggcup
-// DragonTear
-// draugr_arrow
-// draugr_axe
-// draugr_bow
-// draugr_bow_projectile
-// draugr_sword
+
 // dungeon_forestcrypt_door
 // dungeon_sunkencrypt_irongate
-// dungeon_sunkencrypt_irongate_rusty
 
-// DvergerArbalest
-// DvergerArbalest_projectile
-// DvergerStaffBlocker_blockCircle
-// DvergerStaffBlocker_blockCircleBig
-// DvergerStaffBlocker_blockHemisphere
-// DvergerStaffBlocker_blockU
-// DvergerStaffBlocker_blockWall
-// DvergerStaffBlocker_projectile
-// DvergerStaffFire
-// DvergerStaffFire_clusterbomb_projectile
-// DvergerStaffFire_fireball_projectile
-// DvergerStaffHeal
-// DvergerStaffIce
-// DvergerStaffIce_projectile
-// DvergerStaffSupport
-// DvergrKey
-// DvergrKeyFragment
-// DvergrNeedle
 // dvergrprops_banner
 // dvergrprops_bed
 // dvergrprops_chair
@@ -553,47 +296,9 @@ namespace BuildableNature
 // dvergrtown_wood_crane
 // dvergrtown_wood_stake
 // dvergrtown_wood_stakewall
-// DyrnwynBladeFragment
-// DyrnwynHiltFragment
-// DyrnwynTipFragment
-// Ectoplasm
-// Eikthyr
-// Eitr
-// Elaking_AttackLantern
-// elaking_trashpile_destruction
-// ElakingHairBundle
-// ElakingMole_Sandcloud_Projectile
-// ElderBark
-// Entrails
-// EvilHeart_Swamp
+
 // fader_bellholder
-// Fader_Roar_Projectile
-// FaderDrop
-// FaderEmber
-// fallenvalkyrie_spit_projectile
-// FeastAshlands_Material
-// FeastBlackforest_Material
-// FeastDeepNorth_Material
-// Feaster
-// FeastMeadows_Material
-// FeastMistlands_Material
-// FeastMountains_Material
-// FeastOceans_Material
-// FeastPlains_Material
-// FeastSwamps_Material
-// Feathers
-// fenrirhide_hanging_door
-// FimbulvinterOrb_start
-// FineWood
-// FirCone
-// FirConeFrost
-// FireworksRocket_Blue
-// FireworksRocket_Cyan
-// FireworksRocket_Green
-// FireworksRocket_Purple
-// FireworksRocket_Red
-// FireworksRocket_White
-// FireworksRocket_Yellow
+
 // FirTree_Big_log
 // FirTree_big_log_half
 // FirTree_log
@@ -601,106 +306,9 @@ namespace BuildableNature
 // FirTree_oldLog_deepnorth
 // FirTree_Snow_log
 // FirTree_Snow_log_half
-// Fish1
-// Fish10
-// Fish11
-// Fish12
-// Fish2
-// Fish3
-// Fish4_cave
-// Fish5
-// Fish6
-// Fish7
-// Fish8
-// Fish9
-// FishAndBreadUncooked
-// FishAnglerRaw
-// FishingBait
-// FishingBaitAshlands
-// FishingBaitCave
-// FishingBaitDeepNorth
-// FishingBaitForest
-// FishingBaitMistlands
-// FishingBaitOcean
-// FishingBaitPlains
-// FishingBaitSwamp
-// FishingRod
-// FishingRodFloat
-// FishingRodFloatProjectile
-// FishRaw
-// FistBjornClaw
-// FistBjornUndeadClaw
-// FistFenrirClaw
-// FistGold
-// FistGold_BloodLightning
-// FistGold_FrostFire
-// FistGoldUncooked
-// Flametal
-// FlametalNew
-// FlametalOre
-// FlametalOreNew
+
 // FlametalRockstand_frac
-// Flax
-// Flint
-// flintspear_projectile
-// FragrantBundle
-// FreezeGland
-// FreshSeaweed
-// FrostCore
-// FrostWisp
-// Frostwood
-// FrozenFuel
-// FrozenKing_p2
-// FrozenKing_P2_Projectile_Bonemass
-// FrozenKing_P2_Projectile_Eikthyr
-// FrozenKing_P2_Projectile_Elder
-// FrozenKing_P2_Projectile_Fader
-// FrozenKing_P2_Projectile_Moder
-// FrozenKing_P2_Projectile_Queen
-// FrozenKing_P2_Projectile_Yagluth
-// FrozenKingDrop
-// frysling_snowball_projectile
-// FW_ArmorBronzeChest
-// FW_ArmorBronzeLegs
-// FW_ArmorFenringChest
-// FW_ArmorFenringLegs
-// FW_ArmorMageChest
-// FW_ArmorMageChest_Ashlands
-// FW_ArmorMageLegs
-// FW_ArmorMageLegs_Ashlands
-// FW_ArmorPaddedCuirass
-// FW_ArmorPaddedGreaves
-// FW_ArmorTrollLeatherChest
-// FW_ArmorTrollLeatherLegs
-// FW_AxeBronze
-// FW_BattleaxeCrystal
-// FW_BowDraugrFang
-// FW_CapeLinen
-// FW_CapeTrollHide
-// FW_CapeWolf
-// FW_HelmetBronze
-// FW_KnifeSilver
-// FW_KnifeSkollAndHati
-// FW_ShieldBlackmetalTower
-// FW_StaffFireball
-// FW_StaffLightning
-// FW_SwordBlackmetal
-// fx_altar_charred_destruction
-// fx_altar_crystal_destruction
-// fx_CharredStone_Gibs
-// fx_Fading_Bellfragment_Beam
-// fx_icefloor_destruction
-// fx_ShieldCharge_5
-// fx_TrollUndead_Gibs
-// gd_king
-// gdking_Ragdoll
-// GemstoneBlue
-// GemstoneGreen
-// GemstoneRed
-// GenericMoldUncooked
-// Ghost_old
-// Ghost_Void
-// GhostSkull
+
 // giant_brain_frac
 // giant_helmet1_destruction
 // giant_helmet2_destruction
@@ -708,13 +316,12 @@ namespace BuildableNature
 // giant_skull_frac
 // giant_sword1_destruction
 // giant_sword2_destruction
-// GiantBloodSack
 // gjall_egg_projectile
 // gjall_spit_projectile
 // GlowingMushroom
+
 // goblin_banner
 // goblin_fence
-// Goblin_Gem
 // goblin_pole
 // goblin_pole_small
 // goblin_roof_45d
@@ -727,117 +334,38 @@ namespace BuildableNature
 // goblin_woodwall_1m
 // goblin_woodwall_2m
 // goblin_woodwall_2m_ribs
-// GoblinBrute_Attack
-// GoblinBrute_Hildir
-// GoblinBrute_RageAttack
-// GoblinBrute_Taunt
-// GoblinBruteBros
-// GoblinBruteBros_Attack
-// GoblinBruteBros_nochest
-// GoblinBruteBros_RageAttack
-// GoblinClub
-// GoblinClubDeepNorth
-// GoblinKing_ragdoll
+
 // goblinking_totemholder
-// GoblinLoin
-// GoblinShaman_projectile_fireball
-// GoblinShaman_Staff_Bones
-// GoblinShaman_Staff_Feathers
-// GoblinShaman_Staff_Hildir
-// GoblinSpear
-// GoblinSpear_projectile
-// GoblinSpearDeepNorth
-// GoblinSpearDeepNorth_projectile
-// GoblinSword
-// GoblinSwordDeepNorth
-// GoblinTorch
-// GoblinTorchDeepNorth
-// GoblinTotem
-// Gold
-// GoldOre
+
+
 // goldvein_frac
-// GrapplingHook
-// GrapplingPoint
-// GrapplingPointSecondary
-// Grausten
+
 // GraveStone_Broken_CharredTwitcherNest
 // GraveStone_Broken_World
 // GraveStone_CharredFaderLocation
 // GraveStone_CharredTwitcherNest
 // GraveStone_Elite_Broken_CharredTwitcherNest
 // GraveStone_Elite_CharredTwitcherNest
-// Greydwarf_Elite
 // Greydwarf_Surprise
-// Greydwarf_throw_projectile
-// Greydwarf_throw_projectile_frozen
-// GreydwarfEye
+
 // GreydwarfSurprise
-// Guck
-// Hammer
-// HardAntler
-// HareMeat
-// hatchling_cold_projectile
-// HatefulBlood
-// HealthUpgrade_Bonemass
-// HealthUpgrade_GDKing
+
 // HeathRockPillar_frac
-// HelmetAshlandsMediumHood
-// HelmetBerserkerHood
-// HelmetBerserkerUndead
-// HelmetBronze
-// HelmetCarapace
-// HelmetCelebration
-// HelmetCrownofValheim
-// HelmetDNHeavy
-// HelmetDNMage
-// HelmetDNMediumHood
-// HelmetDrake
-// HelmetDverger
-// HelmetFenring
-// HelmetFishingHat
-// HelmetFlametal
-// HelmetHat1
-// HelmetHat10
-// HelmetHat2
-// HelmetHat3
-// HelmetHat4
-// HelmetHat5
-// HelmetHat6
-// HelmetHat7
-// HelmetHat8
-// HelmetHat9
-// HelmetIron
-// HelmetLeather
-// HelmetLox
-// HelmetMage
-// HelmetMage_Ashlands
-// HelmetMidsummerCrown
-// HelmetOdin
-// HelmetPadded
-// HelmetPointyHat
-// HelmetRoot
-// HelmetRootCrown
-// HelmetStrawHat
-// HelmetSweatBand
-// HelmetTrollLeather
-// HelmetYule
+
 // highstone_2_frac
 // highstone_frac
 // HildirKey_forestcrypt
 // HildirKey_mountaincave
 // HildirKey_plainsfortress
-// Hive
-// hive_throw_projectile
-// Hoe
+
 // HoleRock_opening_znet
 // HoleRock_root1
 // HoleRock_root1_destruction
 // HoleRock_rootBush1
 // HoleRock_rootWall1_destruction
-// HoneyGlazedChickenUncooked
-// Hook
+
 // horizontal_web
-// Ice
+
 // Ice_floor
 // Ice_floor_fractured
 // ice_rock1_frac
@@ -865,42 +393,7 @@ namespace BuildableNature
 // IceShore_frac
 // IceSkates
 // IceWall
-// Imp_fireball_projectile
-// Iron
-// IronNails
-// IronOre
-// Ironpit
-// IronScrap
-// JotunWarrior_attack_sword
-// JotunWarrior2HAxe_attack_charge
-// JotunWarrior2HAxe_attack_cleave
-// JotunWarrior2HAxe_attack_dodge
-// JotunWarrior2HAxe_attack_slash
-// JotunWarrior2HSword_attack_charge
-// JotunWarrior2HSword_attack_cleave
-// JotunWarrior2HSword_attack_dodge
-// JotunWarrior2HSword_attack_slash
-// JotunWarriorSword2h
-// JuteBlue
-// JuteRed
-// KaleChipsUncooked
-// KaleSeeds
-// KeysGoldUncooked
-// KnifeBlackMetal
-// KnifeButcher
-// KnifeChitin
-// KnifeCopper
-// KnifeFlint
-// KnifeGold
-// KnifeGold_BloodLightning
-// KnifeGold_FrostFire
-// KnifeGoldUncooked
-// KnifeSilver
-// KnifeSkollAndHati
-// KnifeVoid
-// KnifeWood
-// Lantern
-// Lantern_DN
+
 // Lantern_hooded
 // LargeBone
 // LargeBone_half01
@@ -991,8 +484,7 @@ namespace BuildableNature
 // MorgenHeart
 // MorgenSinew
 // Morkborg_gate
-// Morkhalla_Banner1
-// Morkhalla_Banner2
+
 // Morkhalla_Bench
 // Morkhalla_Block
 // Morkhalla_bridge_davinci
@@ -1622,101 +1114,7 @@ namespace BuildableNature
 // veg_skull_Ashlands
 // VegvisirShard_Bonemass
 // vertical_web
-// vfx_Ash_Arch2_Broken1_destroyed
-// vfx_Ash_Arch2_Broken2_destroyed
-// vfx_ashland_gate_destruction
-// vfx_ashland_ruin_wall_windows_broken_4x6_destruction
-// vfx_ashland_wall_2x2_corner_destruction
-// vfx_ashland_wall_2x2_destruction
-// vfx_Ashpiece_roof_destroyed
-// vfx_Ashruin_steepstair_destroyed
-// vfx_Ashruin_wall3_destroyed
-// vfx_Ashruin_wall4_destroyed
-// vfx_Ashruin_wall5_destroyed
-// vfx_Ashruin_window2_destroyed
-// vfx_Ashruin_window3_destroyed
-// vfx_Ashruin_window4_destroyed
-// vfx_Ashruin_window5_destroyed
-// vfx_Ashruin_window6_destroyed
-// vfx_bar_ancientmetal_stack_destroyed
-// vfx_bar_blackmetal_stack_destroyed
-// vfx_bar_bronze_stack_destroyed
-// vfx_bar_copper_stack_destroyed
-// vfx_bar_flametal_stack_destroyed
-// vfx_bar_gold_stack_destroyed
-// vfx_bar_iron_stack_destroyed
-// vfx_bar_silver_stack_destroyed
-// vfx_bar_tin_stack_destroyed
-// vfx_barrle_destroyed
-// vfx_BigBlob_destroyed
-// vfx_bone_stack_destroyed
-// vfx_charredbanner_destroyed
-// vfx_CharredBanner1_destroyed
-// vfx_CharredBanner2_destroyed
-// vfx_CharredBanner3_destroyed
-// vfx_charredcross_spawner_destroyed
-// vfx_cloth_hanging_destroyed
-// vfx_crate_destroyed
-// vfx_creep_hangingdetroyed
-// vfx_crypt_skeleton_chest_destroyed
-// vfx_Destroyed_AshlandsShip
-// vfx_Destroyed_Karve
-// vfx_Destroyed_Raft
-// vfx_Destroyed_VikingShip
-// vfx_Destroyed_VikingShip_frozen
-// vfx_dvergpost_destroyed
-// vfx_dvergr_beam_destroyed
-// vfx_dvergr_curtain_banner_destroyed
-// vfx_dvergr_curtain_banner_destroyed_horisontal
-// vfx_dvergr_pole_destroyed
-// vfx_dvergr_stake_destroyed
-// vfx_dvergr_stakewall_destroyed
-// vfx_dvergr_wood_wall02_destroyed
-// vfx_dvergr_wood_wall03_destroyed
-// vfx_dvergr_wood_wall04_destroyed
-// vfx_dvergrchair_destroyed
-// vfx_dvergrcreep_beam_destroyed
-// vfx_dvergrcreep_pole_destroyed
-// vfx_dvergrcreep_support_destroyed
-// vfx_dvergrcreep_wood_wall02_destroyed
-// vfx_dvergrcreep_wood_wall03_destroyed
-// vfx_dvergrstool_destroyed
-// vfx_dvergrtable_destroyed
-// vfx_fenrirhide_hanging_destroyed
-// vfx_flintpile_destroyed
-// vfx_FrostOrbs
-// vfx_GoblinShield
-// vfx_greydwarfnest_destroyed
-// vfx_HoleSpawner_destruction
-// vfx_HoleSpawner_double_destruction
-// vfx_morkhalla_bench_destroyed
-// vfx_morkhalla_firepit_destroyed
-// vfx_morkhalla_gatedoor_destroyed
-// vfx_morkhalla_gatedoor02_destroyed
-// vfx_morkhalla_gatedoor03_destroyed
-// vfx_morkhalla_stool_destroyed
-// vfx_morkhalla_table_destroyed
-// vfx_morkhalla_trainingdummy1_destroyed
-// vfx_morkhalla_trainingdummy2_destroyed
-// vfx_morkhalla_weaponstand_destroyed
-// vfx_mountainkit_chair_destroyed
-// vfx_mountainkit_table_destroyed
-// vfx_obsidian_destroyed
-// vfx_skullpile_destroyed
-// vfx_spikey_beam_destruction
-// vfx_StaffShield
-// vfx_standing_brazier_destroyed
-// vfx_stone_wall_ruin_2_destroyed
-// vfx_stone_wall_ruin_destroyed
-// vfx_stonegolem_death
-// vfx_wagon_destroyed
-// vfx_wood_black_stack_destroyed
-// vfx_wood_core_stack_destroyed
-// vfx_wood_fine_stack_destroyed
-// vfx_wood_frost_stack_destroyed
-// vfx_wood_stack_destroyed
-// vfx_wood_yggdrasil_stack_destroyed
-// vfx_wooden_path_destroyed
+
 // VikingCupcakeUncooked
 // VineberrySeeds
 // VineGreenSeeds

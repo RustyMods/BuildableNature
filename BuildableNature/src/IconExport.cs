@@ -83,7 +83,7 @@ public static class IconExport
             RenderTexture.active = previous;
             RenderTexture.ReleaseTemporary(tmp);
             
-            byte[]? encoded = newTex.EncodeToPNG();
+            byte[] encoded = newTex.EncodeToPNG();
             File.WriteAllBytes(filePath, encoded);
         }
         catch

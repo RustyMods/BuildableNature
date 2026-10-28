@@ -1,4 +1,3 @@
-using ClassSystem;
 using PieceManager;
 using UnityEngine;
 using static UnityEngine.Object;
@@ -2142,6 +2141,71 @@ public static partial class Assets
             build.RequiredItems.Add("Wood", 10, true);
             build.RequiredItems.Add("BronzeNails", 4, true);
             build.Snapshot();
+        };
+        var piece_iron_gate_rusty = new Clone("dungeon_sunkencrypt_irongate_rusty");
+        piece_iron_gate_rusty.OnCreated += prefab =>
+        {
+            if (BuildPiece.TryGetPrefab("iron_grate", out var iron_grate) && iron_grate.TryGetComponent(out Animator anim) && iron_grate.TryGetComponent(out Door d))
+            {
+                prefab.Remove<DropOnDestroyed>();
+                prefab.Remove<HoverText>();
+
+                var door = prefab.AddComponent<Door>();
+                door.m_name = "$piece_irongate";
+                door.m_openEffects = d.m_openEffects;
+                door.m_closeEffects = d.m_closeEffects;
+                door.m_checkGuardStone = true;
+
+                var model = prefab.transform.Find("door").gameObject;
+                model.transform.localPosition = new Vector3(1.04f, 1f, 0f);
+                model.transform.localScale = new Vector3(1.1f, 1.4f, 1.1f);
+                model.Remove<BoxCollider>();
+                model.transform.GetChild(0).gameObject.AddComponent<BoxCollider>();
+
+                var animator = prefab.AddComponent<Animator>();
+                animator.runtimeAnimatorController = anim.runtimeAnimatorController;
+
+                var snap1 = new GameObject($"$hud_snappoint_top 1");
+                snap1.SetActive(false);
+                snap1.transform.SetParent(prefab.transform);
+                snap1.tag = "snappoint";
+                snap1.transform.localPosition = new Vector3(1f, 2f, 0f);
+                var snap2 = new GameObject($"$hud_snappoint_top 2");
+                snap2.SetActive(false);
+                snap2.transform.SetParent(prefab.transform);
+                snap2.tag = "snappoint";
+                snap2.transform.localPosition = new Vector3(-1f, 2f, 0f);
+                var snap3 = new GameObject($"$hud_snappoint_bottom 1");
+                snap3.SetActive(false);
+                snap3.transform.SetParent(prefab.transform);
+                snap3.tag = "snappoint";
+                snap3.transform.localPosition = new Vector3(1f, -1f, 0f);
+                var snap4 = new GameObject($"$hud_snappoint_bottom 2");
+                snap4.SetActive(false);
+                snap4.transform.SetParent(prefab.transform);
+                snap4.tag = "snappoint";
+                snap4.transform.localPosition = new Vector3(-1f, -1f, 0f);
+
+                prefab.layer = 10;
+                if (!prefab.HasCollider()) prefab.AddCollider();
+                var piece = prefab.AddComponent<Piece>();
+                piece.m_name = "$piece_iron_grate_rusty";
+                piece.m_category = Piece.PieceCategory.Misc;
+                piece.m_usage = Piece.UsageTagFlags.Building;
+                piece.m_placeEffect = new EffectListRef("vfx_Place_wood_wall", "sfx_build_hammer_metal");
+                var wnt = prefab.GetComponent<WearNTear>();
+                wnt.m_new = model;
+                wnt.m_worn = model;
+                wnt.m_wet = model;
+                wnt.m_broken = model;
+                BuildPiece build = new BuildPiece(prefab);
+                build.Category.Set("Nature");
+                build.Usage.Set(Piece.UsageTagFlags.Building | Piece.UsageTagFlags.Doors);
+                build.Name.English("Rusty Iron Gate");
+
+                build.RequiredItems.Add("Iron", 2, true);
+                build.Snapshot();
+            }
         };
     }    
 }
